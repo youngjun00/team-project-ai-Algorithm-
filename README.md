@@ -12,4 +12,4 @@ GUI :
 ~ : 
 ~ : 
 ~ : 
-![11](./picture/11.jpg)
+![11](https://user-images.githubusercontent.com/89117576/140930346-2469577f-3d35-43da-a9f4-28496dc12fbb.PNG)
