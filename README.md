@@ -12,4 +12,4 @@ GUI :
 ~ : 
 ~ : 
 ~ : 
-![계산기](./picture/11.jpg)
+![11](./picture/11.jpg)
