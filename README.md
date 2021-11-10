@@ -1,5 +1,5 @@
 # AI 알고리즘 실습 팀 프로젝트
-### TEAM - 
+### TEAM - 라플라스의 개
 ## 팀원 소개
 ![zzzz](https://user-images.githubusercontent.com/89188607/141059040-12b4b387-5c34-465b-847c-3564cfa2f547.JPG)
 
