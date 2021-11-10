@@ -1,6 +1,9 @@
 # AI 알고리즘 실습 팀 프로젝트
 ### TEAM - 
 ## 팀원 소개
+![zzzz](https://user-images.githubusercontent.com/89188607/141059040-12b4b387-5c34-465b-847c-3564cfa2f547.JPG)
+
+
 > 김영준(조장, 코딩 담당), 
 > 진민규(코딩 담당),
 > 이풍규(GUI 담당), 
