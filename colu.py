@@ -14,18 +14,18 @@ equation.set("계산식을 입력하세요 : ")
 calculation.grid(row=3, columnspan=8)              #객체 배치 담당
 
 
-def btnPress(num):
+def btnPress(num):               #번호 저장 및 설정
      global equa
      equa = equa + str(num)
      equation.set(equa)
 
-def EqualPress():
+def EqualPress():                #연산자 설정 및 결과값 생성
      global equa
      total = str(eval(equa))
      equation.set(total)
      equa = ""
 
-def ClearPress():
+def ClearPress():                #계산기 클리어
      global equa
      equa = ""
      equation.set("")
@@ -39,6 +39,9 @@ def LaplcePress():
 #####################
 #해당 윈도우 버튼 생성#
 #####################
+
+#기본계산기 버튼#
+################
 
 Button0 = tkt.Button(root, text="0", bg='white',command=lambda: btnPress(0), height=1, width=7, borderwidth=1, relief=tkt.SOLID)
 Button0.grid(row=7, column=2, padx=10, pady=10)
@@ -72,6 +75,10 @@ Equal = tkt.Button(root, text="=", bg='white',command=EqualPress, height=1, widt
 Equal.grid(row=7, column=3, padx=10, pady=10)
 Clear = tkt.Button(root, text="C", bg='white',command=ClearPress, height=1, width=7, borderwidth=1, relief=tkt.SOLID)
 Clear.grid(row=7, column=1, padx=10, pady=10)
+
+#라플라스 버튼 생성#
+##################
+
 Laplace1 = tkt.Button(root, text="a", bg='white',command=lambda: btnPress("a="), height=1, width=7, borderwidth=1, relief=tkt.SOLID)
 Laplace1.grid(row=4, column=5, padx=10, pady=10)
 Laplace2 = tkt.Button(root, text="w", bg='white',command=lambda: btnPress("w="), height=1, width=7, borderwidth=1, relief=tkt.SOLID)
