@@ -42,3 +42,5 @@ laplace_transform(exp(-a*t) * sin(w*t), t, s, noconds=True) ## 14번
 laplace_transform(exp(-a*t) * cos(w*t), t, s, noconds=True )## 15번
 
 
+
+
