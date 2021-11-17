@@ -1,7 +1,7 @@
-import tkinter as tkt
+import tkinter as tkt                               #GUI 모듈을 포함시킴
 
-root = tkt.Tk()
-root.title("계산기")
+root = tkt.Tk()                                     # 가장 기본적인 윈도우root 생성
+root.title("계산기")                                # 윈도우 창 타이틀 생성
 root.resizable(0, 0)                                # 윈도우 크기 고정한다
 root.wm_attributes("-topmost", 1)                   # 화면 상단에 유지된다.
 
@@ -11,7 +11,7 @@ equation = tkt.StringVar()
 
 calculation = tkt.Label(root, textvariable=equation)
 equation.set("계산식을 입력하세요 : ")
-calculation.grid(row=2, columnspan=8)
+calculation.grid(row=2, columnspan=8)              #객체 배치 담당
 
 
 def btnPress(num):
@@ -29,6 +29,9 @@ def ClearPress():
      global equa
      equa = ""
      equation.set("")
+
+#해당 윈도우 버튼 생성#
+#####################
 
 Button0 = tkt.Button(root, text="0", bg='white',command=lambda: btnPress(0), height=1, width=7, borderwidth=1, relief=tkt.SOLID)
 Button0.grid(row=6, column=2, padx=10, pady=10)
@@ -63,4 +66,4 @@ Equal.grid(row=6, column=3, padx=10, pady=10)
 Clear = tkt.Button(root, text="C", bg='white',command=ClearPress, height=1, width=7, borderwidth=1, relief=tkt.SOLID)
 Clear.grid(row=6, column=1, padx=10, pady=10)
 
-root.mainloop()
+root.mainloop()                         #이벤트 메세지 루프
