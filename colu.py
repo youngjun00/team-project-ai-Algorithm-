@@ -10,7 +10,7 @@ equa = ""
 equation = tkt.StringVar()
 
 calculation = tkt.Label(root, textvariable=equation)
-equation.set("계산식을 입력하세요 : ")
+equation.set("계산식을 입력하세요 : ")              #입력 위치
 calculation.grid(row=3, columnspan=8)              #객체 배치 담당
 
 
@@ -76,8 +76,7 @@ Equal.grid(row=7, column=3, padx=10, pady=10)
 Clear = tkt.Button(root, text="C", bg='white',command=ClearPress, height=1, width=7, borderwidth=1, relief=tkt.SOLID)
 Clear.grid(row=7, column=1, padx=10, pady=10)
 
-#라플라스 버튼 생성#
-##################
+# 라플라스 버튼생성#
 
 Laplace1 = tkt.Button(root, text="a", bg='white',command=lambda: btnPress("a="), height=1, width=7, borderwidth=1, relief=tkt.SOLID)
 Laplace1.grid(row=4, column=5, padx=10, pady=10)
@@ -93,12 +92,20 @@ Laplace6 = tkt.Button(root, text="w/s²+w²", bg='white',command=lambda: btnPres
 Laplace6.grid(row=1, column=3, padx=10, pady=10)
 Laplace7 = tkt.Button(root, text="s/s²+w²", bg='white',command=lambda: btnPress("s/s²+w²"), height=1, width=10, borderwidth=1, relief=tkt.SOLID, )
 Laplace7.grid(row=1, column=4, padx=10, pady=10)
-Laplace8 = tkt.Button(root, text="a/s²+a²", bg='white',command=lambda: btnPress("a/s²+a²"), height=1, width=10, borderwidth=1, relief=tkt.SOLID, )
+Laplace8 = tkt.Button(root, text="a/s²-a²", bg='white',command=lambda: btnPress("a/s²-a²"), height=1, width=10, borderwidth=1, relief=tkt.SOLID, )
 Laplace8.grid(row=1, column=5, padx=10, pady=10)
-Laplace9 = tkt.Button(root, text="s/s²+a²", bg='white',command=lambda: btnPress("s/s²+a²"), height=1, width=10, borderwidth=1, relief=tkt.SOLID, )
+Laplace9 = tkt.Button(root, text="s/s²-a²", bg='white',command=lambda: btnPress("s/s²-a²"), height=1, width=10, borderwidth=1, relief=tkt.SOLID, )
 Laplace9.grid(row=2, column=1, padx=10, pady=10)
 Laplace = tkt.Button(root, text="L", bg='white',command=lambda: LaplcePress("L"), height=1, width=7, borderwidth=1, relief=tkt.SOLID, )
 Laplace.grid(row=7, column=5, padx=10, pady=10)
+Laplace10 = tkt.Button(root, text="2ws/(s²+w²)²", bg='white',command=lambda: btnPress("2ws/(s²+w²)²"), height=1, width=10, borderwidth=1, relief=tkt.SOLID, )
+Laplace10.grid(row=2, column=2, padx=10, pady=10)
+Laplace11 = tkt.Button(root, text="s²-w²/(s²+w²)²", bg='white',command=lambda: btnPress("s²-w²/(s²+w²)²"), height=1, width=10, borderwidth=1, relief=tkt.SOLID, )
+Laplace11.grid(row=2, column=3, padx=10, pady=10)
+Laplace12 = tkt.Button(root, text="w/(s+a)²+w²", bg='white',command=lambda: btnPress("w/(s+a)²+w²"), height=1, width=10, borderwidth=1, relief=tkt.SOLID, )
+Laplace12.grid(row=2, column=4, padx=10, pady=10)
+Laplace13 = tkt.Button(root, text="s+a/(s+a)²+w²", bg='white',command=lambda: btnPress("s+a/(s+a)²+w²"), height=1, width=10, borderwidth=1, relief=tkt.SOLID, )
+Laplace13.grid(row=2, column=5, padx=10, pady=10)
 
 
 root.mainloop()                         #이벤트 메세지 루프
