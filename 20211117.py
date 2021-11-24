@@ -17,8 +17,8 @@ from sympy.integrals.transforms import inverse_laplace_transform
 
 s = symbols('s')
 a, w = symbols('a w', constant=True, positive=True)
-lap =1 
-elif lap1 == 2:
+lap1 =1 
+if lap1 == 2:
    laplace_transform(Heaviside(t), t, s, noconds=True)##Heaviside(t)=u(t)  2번
 elif lap1 == 3:
    laplace_transform( t*exp(-a*t), t, s, noconds=True)## 7번 
