@@ -1,3 +1,17 @@
+from tkinter import *
+
+lapin = 0
+root = Tk()
+root.title("라플라스 변환 계산기")
+
+root.geometry("600x600")
+
+def btn1():
+    lapin=1
+    print(lapin)
+b1 = Button(root,width=10, height=6, text='1/s',command=btn1)
+b1.pack()
+
 import sqlite3 #sqlite 받아오기
 
 conn = sqlite3.connect("test.db") #test.db생성
@@ -10,7 +24,7 @@ cur.execute("INSERT INTO customer(lapnum,lapdata) VALUES('1','DiracDelta(t)')")
 #lapnum 1 생성, data는 diracdelta(t)생성
 cur.execute("INSERT INTO customer(lapnum,lapdata) VALUES('2','Heaviside(t)')")
 #lapnum 2 생성, data는 Heaviside(t)생성
-cur.execute("INSERT INTO customer(lapnum,lapdata) VALUES('3','t*exp(-a*t)')")
+cur.execute("INSERT INTO customer(lapnum,lapdata) VALUES('3','exp(-a*t)')")
 #lapnum 3 생성, data는 t*exp(-a*t)생성
 cur.execute("INSERT INTO customer(lapnum,lapdata) VALUES('4','sin(w*t)')")
 #lapnum 4 생성, data는 sin(w*t)생성
@@ -26,12 +40,7 @@ cur.execute("INSERT INTO customer(lapnum,lapdata) VALUES('9','exp(-a*t) * sin(w*
 #lapnum 9 생성, data는 exp(-a*t) * sin(w*t)생성
 cur.execute("INSERT INTO customer(lapnum,lapdata) VALUES('10','exp(-a*t) * cos(w*t)')")
 #lapnum 10 생성, data는 exp(-a*t) * cos(w*t)생성
-sql = "select lapdata from customer where lapnum = ?"
-cur.execute(sql, ('1'))
-rows = cur.fetchall()
 
-#include <math.h>
-#include <stdio.h>
 
 from sympy import *
 from sympy.plotting.plot import MatplotlibBackend, _matplotlib_list
@@ -40,21 +49,39 @@ x, y, z, t = symbols('x y z t')
 f, g, h = symbols('f, g, h', cls=Function)
 
 init_printing()
+
 # 라플라스 모듈 불러오기 
 from sympy.integrals.transforms import laplace_transform
-from sympy.integrals.transforms import inverse_laplace_transform
 
 s = symbols('s')
 a, w = symbols('a w', constant=True, positive=True)
 
-lapresult = laplace_transform(str, t, s,noconds=True)
-
-lapin = 1
 if lapin == 1:
     sql = "select lapdata from customer where lapnum = ?"
     cur.execute(sql, ('1'))
+    rows = cur.fetchall()
     for row in rows:
         str = ''.join(row)
+        lapresult = laplace_transform(str, t, s,noconds=True)
         print(lapresult)
 
+elif lapin == 2:
+    sql = "select lapdata from customer where lapnum = ?"
+    cur.execute(sql, ('2'))
+    rows = cur.fetchall()
+    for row in rows:
+        str = ''.join(row)
+        lapresult = laplace_transform(str, t, s,noconds=True)
+        print(lapresult)
+        
+elif lapin == 3:
+    sql = "select lapdata from customer where lapnum = ?"
+    cur.execute(sql, ('3'))
+    rows = cur.fetchall()
+    for row in rows:
+        str = ''.join(row)
+        lapresult = laplace_transform(str, t, s,noconds=True)
+        print(lapresult)
+        
+root.mainloop
 conn.close
