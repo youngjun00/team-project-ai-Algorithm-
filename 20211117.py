@@ -1,6 +1,5 @@
 from tkinter import *
-from sympy import *
-from sympy.plotting.plot import MatplotlibBackend, _matplotlib_list
+from sympy import * # sympy 모듈 불러오기
 import sqlite3 #sqlite 받아오기
 
 conn = sqlite3.connect("test.db") #test.db생성
@@ -29,15 +28,15 @@ cur.execute("INSERT INTO customer(lapnum,lapdata) VALUES('9','exp(-a*t) * sin(w*
 cur.execute("INSERT INTO customer(lapnum,lapdata) VALUES('10','exp(-a*t) * cos(w*t)')")
 #lapnum 10 생성, data는 exp(-a*t) * cos(w*t)생성
 
-x, y, z, t = symbols('x y z t')
-f, g, h = symbols('f, g, h', cls=Function)
+x, y, z, t = symbols('x y z t') # 기호변수 생성(x,y,z,t)
+f, g, h = symbols('f, g, h', cls=Function) # 기호변수 생성(f,g,h)
 
-init_printing()
+init_printing() # 수식출력을 LaTex수식으로 출력한다
 
-from sympy.integrals.transforms import laplace_transform
+from sympy.integrals.transforms import laplace_transform # 라플라스 변환 모듈 불러오기
 
-s = symbols('s')
-a, w = symbols('a w', constant=True, positive=True)
+s = symbols('s') # 변수 생성
+a, w = symbols('a w', constant=True, positive=True) # 변수생성 (a,w)
 
 lapin=0
 root = Tk()
